@@ -1,5 +1,8 @@
 :root {
   font-family: 'Trebuchet MS', sans-serif;
+  background-image: url('/images/stacked-waves-haikei.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 body {

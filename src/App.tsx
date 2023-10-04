@@ -6,7 +6,7 @@ import usePrompt from './hooks/usePrompt';
 import ImageGallery from './components/ImageGallery';
 
 function App() {
-  const { prompt, updatePrompt, images } = usePrompt();
+  const { prompt, updatePrompt, images, handlePromptSubmit } = usePrompt();
 
   return (
     <ThemeProvider theme={theme}>
@@ -14,7 +14,11 @@ function App() {
         <HeadingWrapper>
           <Heading>AI Image Generator</Heading>
         </HeadingWrapper>
-        <PromptInput prompt={prompt} updatePrompt={updatePrompt} />
+        <PromptInput
+          prompt={prompt}
+          updatePrompt={updatePrompt}
+          handleSumbit={handlePromptSubmit}
+        />
         <ImageGallery images={images} />
       </Wrapper>
     </ThemeProvider>
@@ -34,9 +38,7 @@ const Heading = styled.h1`
 `;
 
 const Wrapper = styled.div`
-  width: 100vw;
-  height: 100vh;
-  background-image: url('/images/stacked-waves-haikei.svg');
-  background-repeat: no-repeat;
-  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `;

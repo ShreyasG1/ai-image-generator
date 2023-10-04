@@ -1,7 +1,11 @@
 import styled from 'styled-components';
 import { PromptInputProps } from '../types';
 
-const PromptInput: React.FC<PromptInputProps> = ({ prompt, updatePrompt }) => {
+const PromptInput: React.FC<PromptInputProps> = ({
+  prompt,
+  updatePrompt,
+  handleSumbit,
+}) => {
   return (
     <Wrapper>
       <InputContainer>
@@ -13,7 +17,9 @@ const PromptInput: React.FC<PromptInputProps> = ({ prompt, updatePrompt }) => {
           value={prompt}
           onChange={updatePrompt}
         />
-        <SubmitIcon className="submit-icon">➢</SubmitIcon>
+        <SubmitIcon className="submit-icon" onClick={handleSumbit}>
+          ➢
+        </SubmitIcon>
       </InputContainer>
     </Wrapper>
   );
